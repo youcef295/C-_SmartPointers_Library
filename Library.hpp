@@ -1,14 +1,28 @@
 #pragma once
 #include <iostream>
+#include <memory>
+#include <vector>
 
 using namespace std;
 
-class LibraryItem
+template <typename T>
+class Library
 {
-protected:
-    string title, author;
+private:
+    vector<shared_ptr<T>> elements;
 
 public:
-    LibraryItem(const string &title, const string &author);
-    virtual void display();
+    void addItem(shared_ptr<T> item)
+    {
+        elements.push_back(item);
+    }
+
+    void displayItems()
+    {
+        for (const auto &element : elements)
+        {   
+            element->display();
+            cout << "_______________________________________________________________" << endl;
+        }
+    }
 };

@@ -8,6 +8,8 @@ set(SOURCES
     main.cpp
     Book.cpp
     DVD.cpp
+    Magazine.cpp
+    Library.cpp
     LibraryItem.cpp
 )
 
